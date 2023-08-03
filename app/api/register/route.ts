@@ -4,6 +4,10 @@ import bcrypt from "bcrypt";
 import prisma from "@/app/libs/prismadb";
 
 export async function POST(
+  //q: what not using request: Request, responseq: Response ?
+  //a: because we are using NextResponse
+  //q: what is above code work for ?
+  //a: above code work for creating a new user
   request: Request, 
 ) {
   const body = await request.json();

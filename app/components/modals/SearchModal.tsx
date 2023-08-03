@@ -1,11 +1,22 @@
 'use client';
-
+// npm run dev
 import qs from 'query-string';
 import dynamic from 'next/dynamic'
 import { useCallback, useMemo, useState } from "react";
+// q: what is this useMemo helping for ?
+// a: useMemo is a react hook that memorizes the output of a function
+//    useMemo will only recompute the memoized value when one of the dependencies has changed
+// q: what is this useState helping for ?
+// a: useState is a react hook that lets you add react state to function components
+//    useState returns a pair of values: the current state and a function that updates it
+// q: what is this useCallback helping for ?
+// a: useCallback is a react hook that will return a memoized version of the callback function that only changes if one of the dependencies has changed
+//    useCallback is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
 import { Range } from 'react-date-range';
 import { formatISO } from 'date-fns';
 import { useRouter, useSearchParams } from 'next/navigation';
+// q: what is this useRouter helping for ?
+// a: useRouter is a next.js hook that gives you access to the router object
 
 import useSearchModal from "@/app/hooks/useSearchModal";
 
@@ -43,6 +54,9 @@ const SearchModal = () => {
   const Map = useMemo(() => dynamic(() => import('../Map'), { 
     ssr: false 
   }), [location]);
+  // q: explain me above code?
+  // a: dynamic is a next.js function that lets you dynamically import a component
+  //    ssr: false means that the component will not be server side rendered
 
   const onBack = useCallback(() => {
     setStep((value) => value - 1);

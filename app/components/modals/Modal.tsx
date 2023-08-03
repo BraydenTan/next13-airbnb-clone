@@ -1,4 +1,6 @@
 'use client';
+//q:what is Modal.tsx helping for ? 
+//a:Modal.tsx is helping for the modal component
 
 import { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";

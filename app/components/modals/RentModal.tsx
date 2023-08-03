@@ -18,6 +18,7 @@ import Counter from "../inputs/Counter";
 import CategoryInput from '../inputs/CategoryInput';
 import CountrySelect from "../inputs/CountrySelect";
 import { categories } from '../navbar/Categories';
+//in navbar/category we have array of categories that we make before
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
 import Heading from '../Heading';
@@ -30,7 +31,9 @@ enum STEPS {
   DESCRIPTION = 4,
   PRICE = 5,
 }
-
+//q:what is enum?
+//a:enum is a type that lets you define a set of named constants
+//this page can let user create a listing within a box 
 const RentModal = () => {
   const router = useRouter();
   const rentModal = useRentModal();
@@ -144,6 +147,7 @@ const RentModal = () => {
           overflow-y-auto
         "
       >
+        
         {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput

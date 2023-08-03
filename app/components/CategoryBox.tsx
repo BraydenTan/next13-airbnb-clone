@@ -26,6 +26,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
       currentQuery = qs.parse(params.toString())
     }
 
+// this is for when user click the icon , the route will updated the path , and the params will be updated
     const updatedQuery: any = {
       ...currentQuery,
       category: label
@@ -34,6 +35,8 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     if (params?.get('category') === label) {
       delete updatedQuery.category;
     }
+
+    //if user double click the icon , the route will updated the path , and the params will be deleted
 
     const url = qs.stringifyUrl({
       url: '/',

@@ -2,6 +2,8 @@
 
 import { useCallback, useState } from "react";
 import { toast } from "react-hot-toast";
+//q:what is this toast helping for ?
+//a:toast is a react hook that lets you show toast notifications
 import { signIn } from 'next-auth/react';
 import { 
   FieldValues, 

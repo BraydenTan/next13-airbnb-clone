@@ -1,7 +1,12 @@
 'use client';
 
 import axios from "axios";
+// q: what is this axios helping for ?
+// a: axios is a promise based HTTP client for the browser and node.js
+//    it is used to make HTTP requests from node.js
 import { AiFillGithub } from "react-icons/ai";
+// q: what is this AiFillGithub helping for ?
+// a: AiFillGithub is a react icon for github
 import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
@@ -19,11 +24,17 @@ import Modal from "./Modal";
 import Input from "../inputs/Input";
 import Heading from "../Heading";
 import Button from "../Button";
+//q:what is react-hot-toast help for ?
+//a:react-hot-toast is a react hook that lets you show toast notifications
 
 const RegisterModal= () => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
+  //q: why isLoading and setIsLoading is use = useState(false) ?
+  //a: isLoading and setIsLoading is use = useState(false) because it is a react hook that lets you update the state of a component 
+  //   it is used to update the state of a component
+  
 
   const { 
     register, 
@@ -53,6 +64,10 @@ const RegisterModal= () => {
     })
     .finally(() => {
       setIsLoading(false);
+      //q: what is this setIsLoading helping for ?
+      //a: setIsLoading is a react hook that lets you update the state of a component
+      //   it is used to update the state of a component
+
     })
   }
 
@@ -140,6 +155,8 @@ const RegisterModal= () => {
       actionLabel="Continue"
       onClose={registerModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
+      //handleSubmit is a react hook that lets you handle the submit of a form
+      // and provide the validation of the form
       body={bodyContent}
       footer={footerContent}
     />

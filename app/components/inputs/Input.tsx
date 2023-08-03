@@ -44,6 +44,9 @@ const Input: React.FC<InputProps> = ({
       <input
         id={id}
         disabled={disabled}
+        //q: what is the function that 'disabled' ? how we used it?
+        //a: the function that 'disabled' is used to disable the input
+        //   we used it by passing the disabled prop to the input
         {...register(id, { required })}
         placeholder=" "
         type={type}
@@ -66,6 +69,7 @@ const Input: React.FC<InputProps> = ({
         `}
       />
       <label 
+      //Moved the label inside the input box
         className={`
           absolute 
           text-md
@@ -82,6 +86,7 @@ const Input: React.FC<InputProps> = ({
           peer-focus:-translate-y-4
           ${errors[id] ? 'text-rose-500' : 'text-zinc-400'}
         `}
+        //the peer is the effect to move the label word become smaller when user click
       >
         {label}
       </label>

@@ -9,6 +9,7 @@ const Logo = () => {
   return ( 
     <Image
       onClick={() => router.push('/')}
+      //when user click on the logo , it will redirect to the home page 
       className="hidden md:block cursor-pointer" 
       src="/images/logo.png" 
       height="100" 
